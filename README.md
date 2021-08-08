@@ -1,5 +1,7 @@
 # maxAffinity
 
+Python script to find all listings for 5/5 affinity Forgotten Runes wizards on OpenSea
+
 ## Usage
 
 `pip install -r requirements.txt`
