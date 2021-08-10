@@ -9,7 +9,7 @@ maxAffinities = defaultdict(set)
 tokens = set()
 
 affinityNum = 5
-print sys.argv
+print(sys.argv)
 
 if len(sys.argv) > 1:
 	affinityNum = int(sys.argv[1])
