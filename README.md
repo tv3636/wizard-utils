@@ -6,7 +6,11 @@ Python script to find all listings for 5/5 affinity Forgotten Runes wizards on O
 
 `pip install -r requirements.txt`
 
-`python listings.py`
+`python listings.py [AFFINITY_TOTAL]`
 
 
-Note that you can also search for 4/4, 3/3, 2/2 affinity by updating line 1098 in `listings.py`
+where `[AFFINITY_TOTAL]` is a number 2-5, to search for wizards with 2/2, 3/3, 4/4, or 5/5 affinity. If no number is provided, the results will be for wizards with 5/5 affinity.
+
+## Example
+
+`python listings.py 5`
