@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 import requests, tabulate, csv, sys
 
 matches = []
@@ -26,13 +26,14 @@ while count < len(matches):
 	response = requests.request("GET", "https://api.opensea.io/api/v1/assets", params=thisQuery)
 
 	for wizard in response.json()['assets']:
-		thisWizard = {}
+		thisWizard = OrderedDict()
 
 		thisWizard['name'] = wizard['name']
-		thisWizard['id'] = wizard['token_id']
-		thisWizard['link'] = wizard['permalink']
 		thisWizard['price'] = None
-
+		thisWizard['link'] = wizard['permalink']
+		thisWizard['id'] = wizard['token_id']
+		
+		
 		if wizard['sell_orders'] and wizard['sell_orders'][0]['sale_kind'] == 0:
 			thisWizard['price'] = float(wizard['sell_orders'][0]['current_price']) / 1000000000000000000.0
 
