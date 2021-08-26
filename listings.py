@@ -48,7 +48,7 @@ tokens = list(tokens)
 #	print(affinity)
 
 offset = 0
-pageSize = 50
+pageSize = 30
 querystring = {"token_ids": [], "asset_contract_address": CONTRACT, "order_direction": "desc", "offset": "0", "limit": str(pageSize)}
 
 results = []
@@ -68,7 +68,6 @@ while offset < len(tokens):
 		thisToken['id'] = token['token_id']
 		thisToken['affinityOccurrences'] = counts[wizMax[thisToken['id']]]
 		thisToken['affinityGroup'] = wizMax[thisToken['id']]
-		
 
 		if token['sell_orders'] and token['sell_orders'][0]['payment_token_contract']['symbol'] == 'ETH':
 			thisToken['price'] = float(token['sell_orders'][0]['current_price']) / 1000000000000000000.0
