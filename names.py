@@ -13,10 +13,10 @@ with open('wizards.csv') as csvfile:
 		if row['name'] and len(row['name'].split()) == nameLength:
 			matches.append(row['token_id'])
 
-querystring = {"token_ids":[],"asset_contract_address":"0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42","order_direction":"desc","offset":"0","limit":"50"}
+querystring = {"token_ids":[],"asset_contract_address":"0x521f9c7505005cfa19a8e5786a9c3c9c9f5e6f42","order_direction":"desc","offset":"0","limit":"30"}
 
 count = 0
-pageSize = 50
+pageSize = 30
 wizards = []
 
 while count < len(matches):
